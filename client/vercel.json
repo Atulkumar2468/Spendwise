@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:match*",
-      "destination": "https://spendwise-backend-6uzc.onrender.com/api/:match*"
+      "destination": "https://spendwise-gppu.onrender.com/api/:match*"
     },
     {
       "source": "/(.*)",
