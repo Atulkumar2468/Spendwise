@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: import.meta.env.VITE_API_URL || '/api',
   withCredentials: true, // Crucial for HTTP-only cookie authentication
   headers: {
     'Content-Type': 'application/json',
@@ -27,7 +27,10 @@ API.interceptors.response.use(
   (response) => response,
   (error) => {
     if (!error.response) {
-      error.message = 'Unable to connect to SpendWise server. Please check your backend connection.';
+      console.error('SpendWise Network Error:', error);
+      const detail = error.message || error.code || 'Network Error';
+      const target = `${error.config?.baseURL || ''}${error.config?.url || ''}`;
+      error.message = `Unable to connect to SpendWise server (${detail}) at ${target}. Please check connection.`;
       return Promise.reject(error);
     }
 
