@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #1c1b1b;
+  }
+}
+
+/* Material Symbols vertical alignment */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+}
+
+/* Notion-style subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #eaeaea;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c0c9c1;
+}
+
+/* Category card transitions */
+.category-card {
+  transition: all 0.15s ease-in-out;
+}
+.category-card:hover {
+  border-color: #c0c9c1;
+  background-color: #f6f3f2;
+}
+
+/* Notion subtle table */
+.notion-table th {
+  font-weight: 500;
+  color: #404943;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+.notion-table td {
+  font-size: 13px;
+  border-top: 1px solid #f0eded;
+}
+.notion-table tr:hover td {
+  background-color: #fcf9f8;
+}
