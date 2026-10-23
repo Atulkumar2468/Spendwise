@@ -1,7 +1,8 @@
 import axios from 'axios';
 
+const isDev = import.meta.env.DEV;
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: isDev ? (import.meta.env.VITE_API_URL || 'http://localhost:5000/api') : '/api',
   withCredentials: true, // Crucial for HTTP-only cookie authentication
   headers: {
     'Content-Type': 'application/json',
